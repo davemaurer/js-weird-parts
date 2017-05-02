@@ -80,3 +80,23 @@ function b() {
 
 a();
 var d;
+
+// variable environment refers to the place a variable is stored in memory. Every execution context has it's own variable
+// environment, so a variable named the same thing in three different functions can have a different value three different
+// times while in memory. Each execution context is it's own separate memory parking space. Example: In the code below you
+// would see 1, 2, and undefined printed to the console in that order.
+
+function b() {
+  var myVar;
+  console.log(myVar);
+}
+
+function a() {
+  var myVar = 2;
+  console.log(myVar);
+  b();
+}
+
+var myVar  = 1;
+console.log(myVar);
+a();
