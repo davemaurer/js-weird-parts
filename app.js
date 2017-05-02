@@ -49,3 +49,23 @@ function b(word) {
 
 console.log(a);
 
+// Single threaded means that ONE command can be executed at a time. JS is single threaded, even though a browser may
+// be doing more than just running JS commands. The browser may have multiple threads going, but JS is single threaded.
+
+// JS is also synchronous, meaning only one line of code can be executed at a time, (in order in JS).
+
+// So in JS one line is executed at a time and one command is executed at a time.
+
+// When you run the code below, a global execution context happens, the functions are loaded into memory, and the code is
+// executed line by line. As JS creates contexts for the functions, an execution context is created for each running function, and these
+// contexts are placed on a CALL STACK. Then all of the things on the call stack are executed in order. Functions are added to the
+// call stack in order, with the top function in the file being on the top of the call stack.
+function b() {
+
+}
+
+function a() {
+  b();
+}
+
+a();
