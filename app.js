@@ -104,7 +104,9 @@ a();
 // when the JS engine needs to go searching for a variable that is not defined, it refers to the lexical scope. The only
 // variable that is declared outside of a function here is var myVar = 1, so it is the outer environment variable found.
 // If function b had been declared inside of function a, myVar would equal 2. In the code below, both function b's and
-// function a's outer reference is the global context, and myVar = 1 was declared in the global context.
+// function a's outer reference is the global context, and myVar = 1 was declared in the global context. If a needed
+// value cannot be found in the immediate outer scope, the JS engine continues to each outside scope(environment) until
+// it reaches the global environment(scope). If the value if not found then, undefined is returned.
 function b() {
   console.log(myVar);
 }
@@ -116,3 +118,21 @@ function a() {
 
 var myVar = 1;
 a();
+
+
+function a() {
+  function b() {
+    console.log(myVar);
+  }
+
+  var myVar = 2;
+  b();
+}
+
+var myVar = 1;
+a();
+
+// using let scopes the variable associated with the let to the block it's declared in, rather than allowing it to be
+// accessed from outside the block. This means that when using a loop, let will create a new variable each time, instead
+// of just reassigning the value of the same variable in memory.
+
