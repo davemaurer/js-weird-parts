@@ -85,7 +85,6 @@ var d;
 // environment, so a variable named the same thing in three different functions can have a different value three different
 // times while in memory. Each execution context is it's own separate memory parking space. Example: In the code below you
 // would see 1, 2, and undefined printed to the console in that order.
-
 function b() {
   var myVar;
   console.log(myVar);
@@ -99,4 +98,21 @@ function a() {
 
 var myVar  = 1;
 console.log(myVar);
+a();
+
+// in the example below, the OUTER ENVIRONMENT comes into play. The outer environment is the lexical environment, so
+// when the JS engine needs to go searching for a variable that is not defined, it refers to the lexical scope. The only
+// variable that is declared outside of a function here is var myVar = 1, so it is the outer environment variable found.
+// If function b had been declared inside of function a, myVar would equal 2. In the code below, both function b's and
+// function a's outer reference is the global context, and myVar = 1 was declared in the global context.
+function b() {
+  console.log(myVar);
+}
+
+function a() {
+  var myVar = 2;
+  b();
+}
+
+var myVar = 1;
 a();
