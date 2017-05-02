@@ -136,3 +136,34 @@ a();
 // accessed from outside the block. This means that when using a loop, let will create a new variable each time, instead
 // of just reassigning the value of the same variable in memory.
 
+// Asynchronous means more than one at a time. So functions that call other functions would all run at the same time. JS
+// doesn't do this normally.
+// JavaScript has an EVENT QUEUE. As the JS engine goes through the call stack, each time the stack is emptied, it looks
+// at the event queue to see if anything if waiting to be executed, like a click handler. If there is something, it adds
+// it to the call stack and executes it. JS waits for the global context to be executed also, before any events are executed.
+// So JavaScript handles asynchronous events after it finishes all of its synchronous events. So asynchronous behavior is
+// seemingly possible, but the JS engine does this by placing things on a queue outside the call stack and handling them
+// as it get to them synchronously.
+
+// In the code below, if its run without clicking on the page, after three seconds you will see 'finished function', then
+// 'finished execution' (without quotes) logged to the console in that order. If you run the code and click on the page
+// before 3 seconds is up, 'click event!' will be logged AFTER the other two logs happen, because the waitThreeSeconds
+// function context execution is on the stack before you click, and the global execution context is on the stack before
+// anything else, so both of those must be popped off of the execution(call) stack before the clickHandler function can
+// be placed on the stack.
+function waitThreeSeconds() {
+  var ms = 3000 + new Date().getTime();
+  while (new Date() < ms){}
+  console.log('finished function');
+}
+
+function clickHandler() {
+  console.log('click event!');
+}
+
+// listen for the click event
+document.addEventListener('click', clickHandler);
+
+waitThreeSeconds();
+console.log('finished execution');
+
