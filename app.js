@@ -57,15 +57,26 @@ console.log(a);
 // So in JS one line is executed at a time and one command is executed at a time.
 
 // When you run the code below, a global execution context happens, the functions are loaded into memory, and the code is
-// executed line by line. As JS creates contexts for the functions, an execution context is created for each running function, and these
+// executed line by line. As JS invokes functions, an execution context is created for each running function, and these
 // contexts are placed on a CALL STACK. Then all of the things on the call stack are executed in order. Functions are added to the
-// call stack in order, with the top function in the file being on the top of the call stack.
-function b() {
+// call stack in order of invocation, NOT in order of when they appear lexically in the file. Each time a function on the
+// stack calls another function, that new function is added to the top of the stack and starts executing. Functions are popped
+// off of the call stack (execution stack) as they finish executing.
 
-}
-
+// In the code below, a global execution context is created, then the JS engine evaluates each line of code, one at a time.
+// When it gets to the function invocation(call) a();, a new execution context is created for that function, and is added to the
+// call stack, on top of the global context. It then executes function a, and gets to the invocation for b();. A new context is
+// then created for the execution of function b, and it goes on top of the call stack. After function b finishes running, it is
+// popped off of the call stack, and function a continues to run. Then when it's finished, it is popped off of the call stack, and
+// we are left with our global context, so the JS engine keeps going down the file.
 function a() {
   b();
+  var c;
+}
+
+function b() {
+  var d;
 }
 
 a();
+var d;
