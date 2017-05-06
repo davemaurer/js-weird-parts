@@ -167,3 +167,21 @@ document.addEventListener('click', clickHandler);
 waitThreeSeconds();
 console.log('finished execution');
 
+// Primitive data types:
+
+// undefined: used to indicate something that needs to be assigned or assigning, but hasn't been yet. Differs from
+// null in that undefined can't be assigned to a variable in order to declare the variable but not set a value initially.
+
+// null: used to indicate no value has been set yet. Can be assigned as a value to a variable.
+
+// boolean: true or false
+
+// number: JS only uses one data type to represent numbers, and it's a floating point number.
+
+// string: a sequence of characters, and in JS only considered one type, not a sequence of individual "string" type values.
+
+// symbol: available in ES6 and above only. Not fully supported by all browsers yet (as of 5/2017)
+
+
+
+// Operators:
