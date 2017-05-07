@@ -184,4 +184,6 @@ console.log('finished execution');
 
 
 
-// Operators:
+// Operators: Functions in JavaScript where abstraction is used to allow "infix notation", where a character or group of
+// characters is used as if it were a function, but no parens or brackets ({}) are required.
+
