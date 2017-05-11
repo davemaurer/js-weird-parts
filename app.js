@@ -187,3 +187,19 @@ console.log('finished execution');
 // Operators: Functions in JavaScript where abstraction is used to allow "infix notation", where a character or group of
 // characters is used as if it were a function, but no parens or brackets ({}) are required.
 
+// An operator is a special function that is written differently than a normal function, but acts the same when using
+// it's required syntax. Human speak: It doesn't look like a normal function because you don't use parens and {}, and
+// requires you to place the operator "infixed" between the values you want to use the operator on. Example:
+
+var  a = 3 + 4; // + is the operator here.
+
+// is the same as:
+function +(a, b) {
+  return // the two numbers added together using a bunch of code
+}
+// javascript takes the + operator and executes it using something like the above code. Infix notation means the
+// operator sits between the parameters that would be passed to it.
+
+
+
+
