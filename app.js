@@ -200,6 +200,15 @@ function +(a, b) {
 // javascript takes the + operator and executes it using something like the above code. Infix notation means the
 // operator sits between the parameters that would be passed to it.
 
+// operators use "OPERATOR PRECEDENCE" to decide which operator is called first when there are two or more on the
+// same line (or same block) of executing code.
+
+// When two or more operators have the same precedence, OPERATOR ASSOCIATIVITY is used to decide the execution order
+// in either right-to-left or left-to-right order. For example all math operators in JavaScript use left-to-right
+// ASSOCIATIVITY.
+
+
+
 
 
 
