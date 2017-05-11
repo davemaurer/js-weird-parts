@@ -207,6 +207,17 @@ function +(a, b) {
 // in either right-to-left or left-to-right order. For example all math operators in JavaScript use left-to-right
 // ASSOCIATIVITY.
 
+// The = operator has right-to-left ASSOCIATIVITY, so in the code below, the number 4 would be logged three times to
+// the console.
+
+var a = 2, b = 3, c = 4;
+
+a = b = c;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
 
 
 
