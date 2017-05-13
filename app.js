@@ -230,4 +230,13 @@ console.log(c);
 
 // You can make an OBJECT using the "new" keyword, but this is not the best practice.
 var person = new Object();
-person["firstname"] = "Tony"; // set a property on the person object.
+person["firstname"] = "Dave"; // set a property on the person object.
+person["lastname"] = "Maurer";
+
+var firstNameProperty = "firstname";
+
+console.log(person[firstNameProperty]); // #=> Dave
+
+// Dot notation can be used to retrieve property values on objects.
+console.log(person.firstname); // Will produce the same result as above #=> Dave
+
