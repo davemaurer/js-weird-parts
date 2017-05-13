@@ -219,7 +219,15 @@ console.log(b);
 console.log(c);
 
 
+// OBJECTS AND FUNCTIONS
 
+// Dot notation with objects: Objects are collections of name/value pairs, and objects can be nested.
+// In your computer's memory, an object can have PROPERTIES and METHODS. A function connected to an
+// object is called a method. It's still a function, just delineated from a function outside an object. Object
+// properties can be primitive: Any JS data type, or an object, which is considered a property when it lives inside
+// of another object.
+// An object that lives inside another object is a property of the parent object.
 
-
-
+// You can make an OBJECT using the "new" keyword, but this is not the best practice.
+var person = new Object();
+person["firstname"] = "Tony"; // set a property on the person object.
