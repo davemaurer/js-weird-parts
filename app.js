@@ -36,16 +36,16 @@
 var a = "Hello World!";
 
 function b(word) {
-  console.log(word)
-};
+  console.log(word);
+}
 
 console.log(a);
 
 // In the code below, when index.html is opened and runs this file, the console will log a ReferenceError: a is not defined,
 // because a has not been declared as a variable.
 function b(word) {
-  console.log(word)
-};
+  console.log(word);
+}
 
 console.log(a);
 
@@ -194,9 +194,9 @@ console.log('finished execution');
 var  a = 3 + 4; // + is the operator here.
 
 // is the same as:
-function +(a, b) {
-  return // the two numbers added together using a bunch of code
-}
+// function +(a, b) {
+//   return // the two numbers added together using a bunch of code
+// }
 // javascript takes the + operator and executes it using something like the above code. Infix notation means the
 // operator sits between the parameters that would be passed to it.
 
@@ -240,3 +240,24 @@ console.log(person[firstNameProperty]); // #=> Dave
 // Dot notation can be used to retrieve property values on objects.
 console.log(person.firstname); // Will produce the same result as above #=> Dave
 
+// doing var person = new Object and var person = {} are the same thing.
+
+// objects in JS can be built just like hashes:
+person = {name: "Dave", age: 48};
+
+// example of an object within an object. address is the child object.
+
+var person = {
+  firstname: "Dave",
+  lastname: "Maurer",
+  address: {
+    street: "345 Awesome Ave.",
+    city: "Aurora",
+    state: "CO"
+  }
+};
+
+// JSON: JavaScript Object Notation. A way to send data over the internet in a compact package. Everything is wrapped
+// up in a string, and all key/value pairs are converted to strings when packaging.
+// JSON is not part of JavaScript, but it pairs with it nicely because JSON was based on JavaScript's object notation
+// convention.
