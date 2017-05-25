@@ -1,6 +1,8 @@
 // When you run a JS file, a global object is always created for you, even if you have no code to run. The global object for a
 // file that runs in the browser is Window object. "This" is also created for you. "This" is a special variable the JS engine makes
-// for you. In a file with no code, "this" is Window.
+// for you. In a file with no code that is an html file (index.html for example), "this" is Window because the browser will create
+// the window object for you as a base, and if there are is no other code to change what "this" is, it defaults to the "global"
+// object (Window). This way JavaScript will always have an environment to run in.
 
 
 // objects in JavaScript are just sets of name(key)/value pairs
