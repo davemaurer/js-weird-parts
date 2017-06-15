@@ -262,4 +262,14 @@ var person = {
 // JSON: JavaScript Object Notation. A way to send data over the internet in a compact package. Everything is wrapped
 // up in a string, and all key/value pairs are converted to strings when packaging.
 // JSON is not part of JavaScript, but it pairs with it nicely because JSON was based on JavaScript's object notation
-// convention.
+// convention. Essentially, any language that uses a key/value pair data structure can use JSON to store send(over HTTP),
+// and retrieve values.
+// Valid JSON needs to have single quotes on the outside and double quotes surrounding all keys(properties) inside the {}.
+
+// Statements vs Expressions: In JS, a function expression is any function that returns(resolves to) a value. A function
+// statement is any function that only manipulates values, or put another way, does not return a value(the value returned
+// isn't used).
+
+
+
+
